@@ -6,6 +6,8 @@ A comprehensive fleet management solution built with:
 - Backend: PHP
 - Database: MySQL (phpMyAdmin)
 
+link:  https://fleet-pro.infinityfreeapp.com/
+
 ## Features
 
 - User authentication (login/register)
@@ -20,6 +22,7 @@ A comprehensive fleet management solution built with:
 
 1. Import the database schema from `sql/setup.sql` to your MySQL database
 2. Configure database connection in `includes/config.php`:
+change these to this if you want to run locally
    ```php
    define('DB_HOST', 'localhost');
    define('DB_USER', 'your_username');
@@ -60,7 +63,3 @@ fleet-management/
 - PHP 7.4+
 - MySQL 5.7+
 - Web server (Apache)
-
-## License
-
-MIT License

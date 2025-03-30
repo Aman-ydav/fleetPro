@@ -1,9 +1,9 @@
 <?php
 // Database configuration
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'fleet_management');
+define('DB_HOST', 'sql305.infinityfree.com');
+define('DB_USER', 'if0_38636542');          
+define('DB_PASS', 'FleetPro923');          
+define('DB_NAME', 'if0_38636542_fleetapp'); 
 
 // Create connection
 try {

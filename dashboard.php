@@ -25,81 +25,103 @@ $statusCounts = getVehicleStatusCounts();
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+        .main-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .content-wrapper {
+            flex: 1;
+            min-height: 0;
+            display: flex;
+        }
         .sidebar {
             transition: all 0.3s;
+            flex-shrink: 0;
+        }
+        .main-content {
+            flex: 1;
+            overflow-y: auto;
         }
         .status-badge {
             font-size: 0.75rem;
             padding: 0.25rem 0.5rem;
             border-radius: 9999px;
         }
-        #statusChart{
+        #statusChart {
             width: 100%;
             max-height: 300px;
         }
         @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
         * {
-        font-family: "Quicksand", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 700;
-        font-style: normal;
-        }   
-        
+            font-family: "Quicksand", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 700;
+            font-style: normal;
+        }
     </style>
 </head>
-<body class="bg-gray-100 font-sans">
-    <div class="flex h-screen">
-        <!-- Sidebar -->
-        <div class="sidebar bg-purple-600 text-white w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
-            <div class="text-white flex items-center space-x-2 px-4">
-                <i class="fas fa-truck text-2xl"></i>
-                <span class="text-xl font-semibold">FleetPro</span>
-            </div>
-            <nav>
-                <a href="dashboard.php" class="block py-2.5 px-4 rounded transition duration-200 bg-purple-700">
-                    <i class="fas fa-tachometer-alt mr-2"></i>Dashboard
-                </a>
-                <a href="vehicles.php" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-purple-700">
-                    <i class="fas fa-truck mr-2"></i>Vehicles
-                </a>
-                <a href="drivers.php" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-purple-700">
-                    <i class="fas fa-users mr-2"></i>Drivers
-                </a>
-                <a href="about.php" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-purple-700">
-                    <i class="fas fa-info-circle mr-2"></i>About
-                </a>
-                <a href="logout.php" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-purple-700">
-                    <i class="fas fa-sign-out-alt mr-2"></i>Logout
-                </a>
-            </nav>
-        </div>
 
-        <!-- Main Content -->
-        <div class="flex-1 flex flex-col overflow-hidden">
-            <!-- Mobile header -->
-            <header class="bg-white shadow-sm md:hidden">
-                <div class="flex items-center justify-between p-4">
-                    <button class="text-gray-500 focus:outline-none sidebar-toggle">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <h1 class="text-xl font-semibold text-gray-800">Dashboard</h1>
+<body class="bg-gray-100">
+    <div class="main-container">
+        <!-- Mobile header -->
+        <header class="bg-white shadow-sm md:hidden flex-shrink-0">
+            <div class="flex items-center justify-between p-4">
+                <button class="text-gray-500 focus:outline-none sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="text-xl font-semibold text-gray-800">Dashboard</h1>
+            </div>
+        </header>
+
+        <div class="content-wrapper">
+            <!-- Sidebar -->
+            <div class="sidebar bg-purple-600 text-white w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
+                <div class="text-white flex items-center space-x-2 px-4">
+                    <i class="fas fa-truck text-2xl"></i>
+                    <span class="text-xl font-semibold">FleetPro</span>
                 </div>
-            </header>
-            <!-- Desktop header -->
-            <header class="bg-white shadow-sm hidden md:block">
-                <div class="flex items-center justify-between p-4">
-                    <h1 class="text-xl font-semibold text-gray-800">Dashboard</h1>
-                    <div class="flex items-center space-x-4">
-                        <span class="text-gray-600">Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
-                        <div class="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center text-white">
-                            <?php echo strtoupper(substr($_SESSION['username'], 0, 1)); ?>
+                <nav>
+                    <a href="dashboard.php" class="block py-2.5 px-4 rounded transition duration-200 bg-purple-700">
+                        <i class="fas fa-tachometer-alt mr-2"></i>Dashboard
+                    </a>
+                    <a href="vehicles.php" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-purple-700">
+                        <i class="fas fa-truck mr-2"></i>Vehicles
+                    </a>
+                    <a href="drivers.php" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-purple-700">
+                        <i class="fas fa-users mr-2"></i>Drivers
+                    </a>
+                    <a href="about.php" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-purple-700">
+                        <i class="fas fa-info-circle mr-2"></i>About
+                    </a>
+                    <a href="logout.php" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-purple-700">
+                        <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Main content area -->
+            <div class="main-content">
+                <!-- Desktop header -->
+                <header class="bg-white shadow-sm hidden md:block flex-shrink-0">
+                    <div class="flex items-center justify-between p-4">
+                        <h1 class="text-xl font-semibold text-gray-800">Dashboard</h1>
+                        <div class="flex items-center space-x-4">
+                            <span class="text-gray-600">Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
+                            <div class="w-8 h-8 rounded-full bg-purple-500 flex items-center justify-center text-white">
+                                <?php echo strtoupper(substr($_SESSION['username'], 0, 1)); ?>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </header>
+                </header>
 
-            <!-- Main content -->
-            <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-4">
+                <!-- Content -->
+                <div class="p-4">
+                    <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-4">
                 <div class="container mx-auto px-4">
                     <!-- Stats Cards -->
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -239,9 +261,14 @@ $statusCounts = getVehicleStatusCounts();
             </main>
         </div>
     </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         // Mobile sidebar toggle
+    
         document.querySelector('.sidebar-toggle').addEventListener('click', function() {
             document.querySelector('.sidebar').classList.toggle('-translate-x-full');
         });

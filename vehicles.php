@@ -51,7 +51,7 @@ if ($action === 'delete' && $vehicleId > 0) {
     exit();
 }
 
-// Get all vehicles
+
 $vehicles = getVehicles();
 $statuses = ['available', 'in_use', 'maintenance', 'unavailable'];
 ?>
@@ -77,7 +77,7 @@ $statuses = ['available', 'in_use', 'maintenance', 'unavailable'];
 </head>
 <body class="bg-gray-100 font-sans">
     <div class="flex h-screen">
-        <!-- Sidebar -->
+      
         <div class="sidebar bg-purple-600 text-white w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 transition duration-200 ease-in-out">
             <div class="text-white flex items-center space-x-2 px-4">
                 <i class="fas fa-truck text-2xl"></i>
@@ -102,9 +102,8 @@ $statuses = ['available', 'in_use', 'maintenance', 'unavailable'];
             </nav>
         </div>
 
-        <!-- Main Content -->
         <div class="flex-1 flex flex-col overflow-hidden">
-            <!-- Mobile header -->
+  
             <header class="bg-white shadow-sm md:hidden">
                 <div class="flex items-center justify-between p-4">
                     <button class="text-gray-500 focus:outline-none sidebar-toggle">
@@ -302,12 +301,12 @@ $statuses = ['available', 'in_use', 'maintenance', 'unavailable'];
     </div>
 
     <script>
-        // Mobile sidebar toggle
+     
         document.querySelector('.sidebar-toggle').addEventListener('click', function() {
             document.querySelector('.sidebar').classList.toggle('-translate-x-full');
         });
 
-        // Close alert messages
+  
         document.querySelectorAll('.close-alert').forEach(button => {
             button.addEventListener('click', function() {
                 this.closest('div[role="alert"]').remove();

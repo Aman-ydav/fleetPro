@@ -35,21 +35,21 @@ A comprehensive fleet management solution built with:
    define('DB_USER', 'your_username');
    define('DB_PASS', 'your_password');
    define('DB_NAME', 'fleet_management');
-
+   ```php
    
 ## fleet-management/
-├── assets/            # Static assets
-├── includes/          # PHP includes
-│   ├── auth.php       # Authentication functions
-│   ├── config.php     # Database configuration
-│   └── db.php         # Database operations
-├── sql/               # Database schema
-│   └── setup.sql      # Database setup script
-├── about.php          # About page
-├── dashboard.php      # Dashboard
-├── drivers.php        # Driver management
-├── index.php          # Landing page
-├── login.php          # Login page
-├── logout.php         # Logout handler
-├── register.php       # Registration page
-└── vehicles.php       # Vehicle management
+-├── assets/            # Static assets
+-├── includes/          # PHP includes
+-│   ├── auth.php       # Authentication functions
+-│   ├── config.php     # Database configuration
+-│   └── db.php         # Database operations
+-├── sql/               # Database schema
+-│   └── setup.sql      # Database setup script
+-├── about.php          # About page
+-├── dashboard.php      # Dashboard
+-├── drivers.php        # Driver management
+-├── index.php          # Landing page
+-├── login.php          # Login page
+-├── logout.php         # Logout handler
+-├── register.php       # Registration page
+-└── vehicles.php       # Vehicle management

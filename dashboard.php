@@ -9,7 +9,7 @@ if (!isLoggedIn()) {
     exit();
 }
 
-// Get dashboard statistics
+
 $vehicleCount = getVehicleCount();
 $driverCount = getDriverCount();
 $statusCounts = getVehicleStatusCounts();
@@ -104,9 +104,8 @@ $statusCounts = getVehicleStatusCounts();
                 </nav>
             </div>
 
-            <!-- Main content area -->
             <div class="main-content">
-                <!-- Desktop header -->
+            
                 <header class="bg-white shadow-sm hidden md:block flex-shrink-0">
                     <div class="flex items-center justify-between p-4">
                         <h1 class="text-xl font-semibold text-gray-800">Dashboard</h1>
@@ -119,13 +118,13 @@ $statusCounts = getVehicleStatusCounts();
                     </div>
                 </header>
 
-                <!-- Content -->
+              
                 <div class="p-4">
                     <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-4">
                 <div class="container mx-auto px-4">
-                    <!-- Stats Cards -->
+                  
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                        <!-- Total Vehicles -->
+                  
                         <div class="bg-white rounded-lg shadow p-6">
                             <div class="flex items-center">
                                 <div class="p-3 rounded-full bg-purple-100 text-blue-600 mr-4">
@@ -138,7 +137,7 @@ $statusCounts = getVehicleStatusCounts();
                             </div>
                         </div>
 
-                        <!-- Total Drivers -->
+                    
                         <div class="bg-white rounded-lg shadow p-6">
                             <div class="flex items-center">
                                 <div class="p-3 rounded-full bg-green-100 text-green-600 mr-4">
@@ -151,7 +150,7 @@ $statusCounts = getVehicleStatusCounts();
                             </div>
                         </div>
 
-                        <!-- Available Vehicles -->
+                      
                         <div class="bg-white rounded-lg shadow p-6">
                             <div class="flex items-center">
                                 <div class="p-3 rounded-full bg-purple-100 text-purple-600 mr-4">
@@ -171,7 +170,6 @@ $statusCounts = getVehicleStatusCounts();
                             </div>
                         </div>
 
-                        <!-- In Maintenance -->
                         <div class="bg-white rounded-lg shadow p-6">
                             <div class="flex items-center">
                                 <div class="p-3 rounded-full bg-yellow-100 text-yellow-600 mr-4">
@@ -192,15 +190,15 @@ $statusCounts = getVehicleStatusCounts();
                         </div>
                     </div>
 
-                    <!-- Charts Row -->
+                
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-                        <!-- Vehicle Status Chart -->
+                   
                         <div class="bg-white rounded-lg shadow p-6">
                             <h2 class="text-lg font-semibold mb-4">Vehicle Status</h2>
                             <canvas id="statusChart" height="250"></canvas>
                         </div>
 
-                        <!-- Recent Activity -->
+                  
                         <div class="bg-white rounded-lg shadow p-6">
                             <h2 class="text-lg font-semibold mb-4">Recent Activity</h2>
                             <div class="space-y-4">
@@ -235,7 +233,7 @@ $statusCounts = getVehicleStatusCounts();
                         </div>
                     </div>
 
-                    <!-- Quick Actions -->
+               
                     <div class="bg-white rounded-lg shadow p-6 mb-8">
                         <h2 class="text-lg font-semibold mb-4">Quick Actions</h2>
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -267,13 +265,13 @@ $statusCounts = getVehicleStatusCounts();
     </div>
 
     <script>
-        // Mobile sidebar toggle
+ 
     
         document.querySelector('.sidebar-toggle').addEventListener('click', function() {
             document.querySelector('.sidebar').classList.toggle('-translate-x-full');
         });
 
-        // Vehicle Status Chart
+     
         const statusCtx = document.getElementById('statusChart').getContext('2d');
         const statusChart = new Chart(statusCtx, {
             type: 'doughnut',

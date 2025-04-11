@@ -44,4 +44,4 @@ Developed by:
 
 **4th Semester Students - Aman, Aditya, Harshit, Mukesh**  
 **INT220 & INT219 Combined Project**  
-**Department of Computer Applications**
+**Department of Computer Science and Engineering**

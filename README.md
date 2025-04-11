@@ -1,12 +1,9 @@
-# Fleet Management System
+# 🚗 Fleet Management System
 
-> **Note:** This project is a **class assignment** for **INT220** and **INT219** in the **4th semester**. The application is built using **HTML**, **Tailwind CSS**, and **JavaScript** for the frontend, with **PHP** as the backend and **MySQL** as the database.
+> **Note:** This project is a **class assignment** for **INT220** and **INT219** in the **4th semester**.  
+> The application is developed using **HTML**, **Tailwind CSS**, and **JavaScript** for the frontend, with **PHP** as the backend and **MySQL** as the database.
 
-A comprehensive fleet management solution built with:
-
-- **Frontend**: HTML, Tailwind CSS, JavaScript  
-- **Backend**: PHP  
-- **Database**: MySQL (phpMyAdmin)  
+A comprehensive fleet management solution that allows easy monitoring and control of vehicles and drivers in a transport organization.
 
 🔗 **Live Demo**: [Fleet Pro](https://fleet-pro.infinityfreeapp.com/)
 
@@ -14,42 +11,37 @@ A comprehensive fleet management solution built with:
 
 ## 🚀 Features
 
-- User authentication (login/register)
-- Vehicle management (CRUD operations)
-- Driver management (CRUD operations)
-- Dashboard with fleet statistics
-- Responsive design for all devices
-- Real-time updates
-- Secure authentication
+- 🔐 User authentication (login/register)
+- 🚚 Vehicle management (Create, Read, Update, Delete)
+- 👨‍✈️ Driver management (Create, Read, Update, Delete)
+- 📊 Admin dashboard with fleet statistics
+- 📱 Fully responsive UI (mobile-friendly)
+- ⚡ Real-time updates
+- 🛡️ Secure session-based authentication
 
 ---
 
-## ⚙️ Installation
+## 🧰 Technical Requirements
 
-1. Import the database schema from `sql/setup.sql` into your MySQL database.
-2. Configure the database connection in `includes/config.php`:
-   
-   Update these lines to match your local setup:
-   ```php
-   define('DB_HOST', 'localhost');
-   define('DB_USER', 'your_username');
-   define('DB_PASS', 'your_password');
-   define('DB_NAME', 'fleet_management');
-   ```php
-   
-## fleet-management/
--├── assets/            # Static assets
--├── includes/          # PHP includes
--│   ├── auth.php       # Authentication functions
--│   ├── config.php     # Database configuration
--│   └── db.php         # Database operations
--├── sql/               # Database schema
--│   └── setup.sql      # Database setup script
--├── about.php          # About page
--├── dashboard.php      # Dashboard
--├── drivers.php        # Driver management
--├── index.php          # Landing page
--├── login.php          # Login page
--├── logout.php         # Logout handler
--├── register.php       # Registration page
--└── vehicles.php       # Vehicle management
+- ✅ PHP 7.4 or higher
+- ✅ MySQL 5.7 or higher
+- ✅ Apache web server (XAMPP, WAMP, LAMP)
+- ✅ phpMyAdmin (optional)
+- ✅ Modern browser (Chrome, Firefox, etc.)
+
+---
+
+## 📝 License
+
+This project is intended **for educational purposes only** as part of the **INT220 and INT219** combined coursework.  
+**Not for commercial use.**
+
+---
+
+## ✍️ Authors
+
+Developed by:
+
+**4th Semester Students - Aman, Aditya, Harshit, Mukesh**  
+**INT220 & INT219 Combined Project**  
+**Department of Computer Applications**

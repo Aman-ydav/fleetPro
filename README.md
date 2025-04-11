@@ -1,14 +1,18 @@
 # Fleet Management System
 
+> **Note:** This project is a **class assignment** for **INT220** and **INT219** in the **4th semester**. The application is built using **HTML**, **Tailwind CSS**, and **JavaScript** for the frontend, with **PHP** as the backend and **MySQL** as the database.
+
 A comprehensive fleet management solution built with:
 
-- Frontend: HTML, Tailwind CSS, JavaScript
-- Backend: PHP
-- Database: MySQL (phpMyAdmin)
+- **Frontend**: HTML, Tailwind CSS, JavaScript  
+- **Backend**: PHP  
+- **Database**: MySQL (phpMyAdmin)  
 
-link:  https://fleet-pro.infinityfreeapp.com/
+🔗 **Live Demo**: [Fleet Pro](https://fleet-pro.infinityfreeapp.com/)
 
-## Features
+---
+
+## 🚀 Features
 
 - User authentication (login/register)
 - Vehicle management (CRUD operations)
@@ -18,29 +22,22 @@ link:  https://fleet-pro.infinityfreeapp.com/
 - Real-time updates
 - Secure authentication
 
-## Installation
+---
 
-1. Import the database schema from `sql/setup.sql` to your MySQL database
-2. Configure database connection in `includes/config.php`:
-change these to this if you want to run locally
+## ⚙️ Installation
+
+1. Import the database schema from `sql/setup.sql` into your MySQL database.
+2. Configure the database connection in `includes/config.php`:
+   
+   Update these lines to match your local setup:
    ```php
    define('DB_HOST', 'localhost');
    define('DB_USER', 'your_username');
    define('DB_PASS', 'your_password');
    define('DB_NAME', 'fleet_management');
-   ```
-3. Deploy files to your web server
-4. Access the application through your browser
 
-## Default Credentials
-
-- Email: admin@fleetpro.com
-- Password: password
-
-## File Structure
-
-```
-fleet-management/
+   
+## fleet-management/
 ├── assets/            # Static assets
 ├── includes/          # PHP includes
 │   ├── auth.php       # Authentication functions
@@ -56,10 +53,3 @@ fleet-management/
 ├── logout.php         # Logout handler
 ├── register.php       # Registration page
 └── vehicles.php       # Vehicle management
-```
-
-## Technical Requirements
-
-- PHP 7.4+
-- MySQL 5.7+
-- Web server (Apache)
